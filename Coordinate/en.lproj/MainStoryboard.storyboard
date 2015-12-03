@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VFi-Bt-fBg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Show View Controller-->
+        <scene sceneID="alp-OJ-8yn">
+            <objects>
+                <viewController id="VFi-Bt-fBg" customClass="ShowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RBt-ev-voc"/>
+                        <viewControllerLayoutGuide type="bottom" id="c7k-gl-uLp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xsg-NL-vPA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dA3-Cs-K9o" userLabel="backgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR3-S1-aMU" userLabel="font">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="300"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ct-Iq-pkr" userLabel="mainImage">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-5N-oqA" userLabel="tempDrawImage">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU5-CO-nxM">
+                                <rect key="frame" x="161" y="31" width="151" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordMustSuccess:" destination="VFi-Bt-fBg" eventType="touchUpInside" id="WZA-88-YXW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yz-bs-Orz">
+                                <rect key="frame" x="8" y="31" width="151" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StopRecord:" destination="VFi-Bt-fBg" eventType="touchUpInside" id="I0s-ug-re7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v7x-5N-oqA" firstAttribute="leading" secondItem="xsg-NL-vPA" secondAttribute="leading" id="3mm-b7-wpz"/>
+                            <constraint firstItem="1Ct-Iq-pkr" firstAttribute="bottom" secondItem="xsg-NL-vPA" secondAttribute="bottom" id="7jC-ne-h4l"/>
+                            <constraint firstItem="1Ct-Iq-pkr" firstAttribute="leading" secondItem="xsg-NL-vPA" secondAttribute="leading" id="AeG-8z-7KK"/>
+                            <constraint firstItem="dA3-Cs-K9o" firstAttribute="trailing" secondItem="xsg-NL-vPA" secondAttribute="trailing" id="G6X-wI-p5X"/>
+                            <constraint firstItem="QR3-S1-aMU" firstAttribute="trailing" secondItem="xsg-NL-vPA" secondAttribute="trailing" id="GWk-0o-d60"/>
+                            <constraint firstItem="v7x-5N-oqA" firstAttribute="bottom" secondItem="xsg-NL-vPA" secondAttribute="bottom" id="JxT-Gj-RVp"/>
+                            <constraint firstItem="v7x-5N-oqA" firstAttribute="trailing" secondItem="xsg-NL-vPA" secondAttribute="trailing" id="L7Q-Ew-dva"/>
+                            <constraint firstItem="dA3-Cs-K9o" firstAttribute="leading" secondItem="xsg-NL-vPA" secondAttribute="leading" id="VVz-sJ-Xf4"/>
+                            <constraint firstItem="1Ct-Iq-pkr" firstAttribute="trailing" secondItem="xsg-NL-vPA" secondAttribute="trailing" id="VWq-ar-GGi"/>
+                            <constraint firstItem="1Ct-Iq-pkr" firstAttribute="top" secondItem="xsg-NL-vPA" secondAttribute="top" id="bTY-ec-suW"/>
+                            <constraint firstItem="QR3-S1-aMU" firstAttribute="bottom" secondItem="xsg-NL-vPA" secondAttribute="bottom" id="l9x-kc-8zE"/>
+                            <constraint firstItem="dA3-Cs-K9o" firstAttribute="top" secondItem="xsg-NL-vPA" secondAttribute="top" id="mCD-kj-irD"/>
+                            <constraint firstItem="dA3-Cs-K9o" firstAttribute="bottom" secondItem="xsg-NL-vPA" secondAttribute="bottom" id="pB2-Ro-MXe"/>
+                            <constraint firstItem="QR3-S1-aMU" firstAttribute="top" secondItem="xsg-NL-vPA" secondAttribute="top" id="pS1-zL-JxU"/>
+                            <constraint firstItem="v7x-5N-oqA" firstAttribute="top" secondItem="xsg-NL-vPA" secondAttribute="top" id="rl2-H6-CPT"/>
+                            <constraint firstItem="QR3-S1-aMU" firstAttribute="leading" secondItem="xsg-NL-vPA" secondAttribute="leading" id="wGs-gB-tHG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="dA3-Cs-K9o" id="9hb-of-g4i"/>
+                        <outlet property="lb_font" destination="QR3-S1-aMU" id="UX8-de-TrR"/>
+                        <outlet property="mainImage" destination="1Ct-Iq-pkr" id="V01-uW-wf8"/>
+                        <outlet property="tempDrawImage" destination="v7x-5N-oqA" id="K0n-pF-tC5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sd3-zU-faH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="8"/>
+        </scene>
+    </scenes>
+</document>
