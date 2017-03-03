@@ -155,6 +155,18 @@ static NSString* const kFileName=@"output.mov";
 -(BOOL) setUpWriter {
     
     CGSize size = self.captureLayer.frame.size;
+    CGSize translate = CGSizeMake(0, size.height);//The translate size for flip the context.
+    //Context size must be times of 32
+    if (fmodf(size.width, 32) > 0) {
+        int quotient = size.width/32;
+        size.width = (quotient+1)*32;
+        translate.width += (size.width-self.captureLayer.frame.size.width)/2;
+    }
+    if (fmodf(size.height, 32) > 0) {
+        int quotient = size.height/32;
+        size.height = (quotient+1)*32;
+        translate.height -= (size.height-self.captureLayer.frame.size.height)/2;
+    }
     //Clear Old TempFile
 	NSError  *error = nil;
     NSString *filePath=[self tempFilePath];
@@ -213,7 +225,7 @@ static NSString* const kFileName=@"output.mov";
                                          kCGImageAlphaNoneSkipFirst);
         CGColorSpaceRelease(colorSpace);
         CGContextSetAllowsAntialiasing(context,NO);
-        CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0,-1, 0, size.height);
+        CGAffineTransform flipVertical = CGAffineTransformMake(1, 0, 0,-1, translate.width, translate.height);
         CGContextConcatCTM(context, flipVertical);
     }
     if (context== NULL)
